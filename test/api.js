@@ -26,4 +26,9 @@ rbac.users.allow({
 
 
 // tests
-rbac.can('admins').do('create.blog').should.be.true;
+describe('admins', function () {
+	it('should have all permissions', function () {
+		rbac.can('admins').do('create.blogs').should.be.true;
+		rbac.can('admins').do('update.settings').should.be.true;
+	})
+})
