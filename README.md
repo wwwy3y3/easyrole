@@ -1,7 +1,7 @@
 # easyrole
 Easy Role Based Access Control
 
-# install
+# Install
 ``` javascript
 npm install easyrole
 ```
@@ -39,4 +39,34 @@ rbac.can('admins').do('create.blogs') //return true
 rbac.can('editors').do('update.settings') //return false
 ```
 
-# api
+# Getting Start
+## set roles first
+``` javascript
+var Rbac= require('easyrole');
+var rbac= new Rbac();
+rbac.setRoles(['admins', 'editors', 'developers', 'users']);
+```
+
+## set permissions to roles
+``` javascript
+// give admins all permissions
+rbac.admins.allow('*');
+
+// editors
+rbac.editors.allow({
+	blogs: ['create', 'read', 'update', 'delete'],
+	settings: ['read']
+})
+
+// extend editors permissoins to developers
+rbac.developers.extend(rbac.editors)
+			   .allow({
+			   		settings: ['read', 'update']
+			   })
+```
+
+## use it
+``` javascript
+rbac.can('admins').do('create.blogs') //return true
+```
+
