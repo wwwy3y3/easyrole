@@ -64,8 +64,17 @@ describe('users', function () {
 })
 
 describe('get roles', function () {
+	var admin;
 	it('should get a admin role', function () {
-		var admin= rbac.getRoles('admins');
+		admin= rbac.getRoles('admins');
 		admin.should.be.ok;
+	})
+
+	it('should use admin object to test permissions', function () {
+		admin.can('create.blogs').should.be.true;
+	})
+
+	it('should use user object to test permissions', function () {
+		rbac.getRoles('users').can('create.blogs').should.be.false;
 	})
 })
