@@ -23,6 +23,7 @@ rbac.prototype.can = function(role) {
 };
 
 rbac.prototype.getRoles = function(role) {
+	var self= this;
 	return self[role];
 };
 
