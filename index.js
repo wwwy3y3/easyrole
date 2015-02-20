@@ -22,4 +22,8 @@ rbac.prototype.can = function(role) {
 	}
 };
 
+rbac.prototype.getRoles = function(role) {
+	return self[role];
+};
+
 module.exports= rbac;
