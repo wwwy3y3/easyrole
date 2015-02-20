@@ -14,7 +14,7 @@ rbac.editors.allow({
 })
 
 // developers
-rbac.developers.extend('editors')
+rbac.developers.extend(rbac.editors)
 			   .allow({
 			   		settings: ['read', 'update']
 			   })
@@ -24,11 +24,41 @@ rbac.users.allow({
 	blogs: ['read']
 })
 
-
 // tests
 describe('admins', function () {
 	it('should have all permissions', function () {
 		rbac.can('admins').do('create.blogs').should.be.true;
 		rbac.can('admins').do('update.settings').should.be.true;
+	})
+})
+
+
+describe('editors', function () {
+	it('should create a blog', function () {
+		rbac.can('editors').do('create.blogs').should.be.true;
+	})
+
+	it('should not be allowed to update settings', function () {
+		rbac.can('editors').do('update.settings').should.be.false;
+	})
+})
+
+describe('developers', function () {
+	it('should create a blog', function () {
+		rbac.can('developers').do('create.blogs').should.be.true;
+	})
+
+	it('should update settings', function () {
+		rbac.can('developers').do('update.settings').should.be.true;
+	})
+})
+
+describe('users', function () {
+	it('should read a blog', function () {
+		rbac.can('users').do('read.blogs').should.be.true;
+	})
+
+	it('should not be allowed to create a blog', function () {
+		rbac.can('users').do('create.blogs').should.be.false;
 	})
 })
