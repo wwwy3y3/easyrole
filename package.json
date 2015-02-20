@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/wwwy3y3/easyrole/issues"
   },
-  "homepage": "https://github.com/wwwy3y3/easyrole"
+  "homepage": "https://github.com/wwwy3y3/easyrole",
+  "devDependencies": {
+    "should": "^5.0.0",
+    "mocha": "^2.1.0"
+  }
 }
