@@ -17,7 +17,7 @@ rbac.prototype.can = function(role) {
 	var self= this;
 	return {
 		do: function (action) {
-			return self[role].do(action);
+			return self[role].can(action);
 		}
 	}
 };
