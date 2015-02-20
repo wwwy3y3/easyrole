@@ -62,3 +62,10 @@ describe('users', function () {
 		rbac.can('users').do('create.blogs').should.be.false;
 	})
 })
+
+describe('get roles', function () {
+	it('should get a admin role', function () {
+		var admin= rbac.getRoles('admins');
+		admin.should.be.ok;
+	})
+})
