@@ -72,4 +72,9 @@ rbac.can('admins').do('create.blogs') //return true
 
 # Api
 ## rbac.can('<role>').do('<action>.<resource>')
-
+## rbac.getRoles('<role>')
+return a role object
+``` javascript
+var admin= rbac.getRoles('admins');
+admin.can('create.blogs') // return true
+```
