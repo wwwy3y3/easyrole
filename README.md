@@ -70,3 +70,6 @@ rbac.developers.extend(rbac.editors)
 rbac.can('admins').do('create.blogs') //return true
 ```
 
+# Api
+## rbac.can('<role>').do('<action>.<resource>')
+
