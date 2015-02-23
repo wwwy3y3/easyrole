@@ -82,3 +82,6 @@ return a role object
 var admin= rbac.getRoles('admins');
 admin.can('create.blogs') // return true
 ```
+
+# Todo
+- [ ] use merge instead of replace in permission extend
