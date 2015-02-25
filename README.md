@@ -71,6 +71,12 @@ rbac.can('admins').do('blogs.create') //return true
 ```
 
 # Api
+## rbac.setRoles([roles..])
+set roles for your rbac
+
+## rbac[role].allow(permissions)
+add permissions to role
+
 ## rbac.can('role').do('resource.action')
 return boolean
 ``` javascript
