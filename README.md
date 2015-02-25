@@ -33,10 +33,10 @@ rbac.users.allow({
 })
 
 // can admin creare blog
-rbac.can('admins').do('create.blogs') //return true
+rbac.can('admins').do('blogs.create') //return true
 
 // can editor update settings
-rbac.can('editors').do('update.settings') //return false
+rbac.can('editors').do('settings.update') //return false
 ```
 
 # Getting Start
@@ -67,20 +67,20 @@ rbac.developers.extend(rbac.editors)
 
 ## use it
 ``` javascript
-rbac.can('admins').do('create.blogs') //return true
+rbac.can('admins').do('blogs.create') //return true
 ```
 
 # Api
-## rbac.can('role').do('action.resource')
+## rbac.can('role').do('resource.action')
 return boolean
 ``` javascript
-rbac.can('admins').do('create.blogs') //return true
+rbac.can('admins').do('blogs.create') //return true
 ```
 ## rbac.getRoles('role')
 return a role object
 ``` javascript
 var admin= rbac.getRoles('admins');
-admin.can('create.blogs') // return true
+admin.can('blogs.create') // return true
 ```
 
 # Todo
