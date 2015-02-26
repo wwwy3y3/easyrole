@@ -4,7 +4,7 @@
   "description": "Role Based Access Control",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R"
+    "test": "mocha -R list"
   },
   "repository": {
     "type": "git",
