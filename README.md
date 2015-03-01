@@ -93,4 +93,4 @@ admin.can('blogs.create') // return true
 ```
 
 # Todo
-- [ ] use merge instead of replace in permission extend
+- [x] use merge instead of replace in permission extend
