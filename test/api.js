@@ -11,14 +11,16 @@ rbac.admins.allow('*');
 rbac.editors.allow({
 	blogs: ['create', 'read', 'update', 'delete'],
 	settings: ['read'],
-	sth: '*'
+	sth: '*',
+	pay: ['use']
 })
 
 // developers
 rbac.developers.extend(rbac.editors)
 			   .allow({
 			   		blogs: ['other_permission'],
-			   		settings: ['read', 'update']
+			   		settings: ['read', 'update'],
+			   		pay: '*'
 			   })
 
 // users
@@ -53,6 +55,18 @@ describe('developers', function () {
 	it('should update settings', function () {
 		rbac.can('developers').do('settings.update').should.be.true;
 	})
+
+	it('should do sth', function () {
+		rbac.can('developers').do('sth.cool').should.be.true;
+	})
+
+	it('should pay use', function () {
+		rbac.can('developers').do('pay.use').should.be.true;
+	})
+
+	it('should pay all', function () {
+		rbac.can('developers').do('pay.all').should.be.true;
+	})	
 })
 
 describe('users', function () {
