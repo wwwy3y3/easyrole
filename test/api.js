@@ -10,7 +10,8 @@ rbac.admins.allow('*');
 // editors
 rbac.editors.allow({
 	blogs: ['create', 'read', 'update', 'delete'],
-	settings: ['read']
+	settings: ['read'],
+	sth: '*'
 })
 
 // developers
