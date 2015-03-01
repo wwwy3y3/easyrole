@@ -24,7 +24,7 @@ rbac.developers.extend(rbac.editors)
 rbac.users.allow({
 	blogs: ['read']
 })
-console.log(rbac.developers);
+
 // tests
 describe('admins', function () {
 	it('should have all permissions', function () {
