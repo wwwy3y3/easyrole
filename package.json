@@ -1,6 +1,6 @@
 {
   "name": "easyrole",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Role Based Access Control",
   "main": "index.js",
   "scripts": {
