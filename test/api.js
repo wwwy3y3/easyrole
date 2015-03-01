@@ -16,6 +16,7 @@ rbac.editors.allow({
 // developers
 rbac.developers.extend(rbac.editors)
 			   .allow({
+			   		blogs: ['other_permission'],
 			   		settings: ['read', 'update']
 			   })
 
@@ -23,7 +24,7 @@ rbac.developers.extend(rbac.editors)
 rbac.users.allow({
 	blogs: ['read']
 })
-
+console.log(rbac.developers);
 // tests
 describe('admins', function () {
 	it('should have all permissions', function () {
