@@ -94,3 +94,5 @@ admin.can('blogs.create') // return true
 
 # Todo
 - [x] use merge instead of replace in permission extend
+- [ ] homepage
+- [ ] wiki
